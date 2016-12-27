@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Kafka mirror maker producer configurations -->
+
+<configuration supports_final="true">
+    <property>
+        <name>zk.connect</name>
+        <value></value>
+        <description>Zookeper znode for producer</description>
+    </property>
+    <property>
+        <name>producer.type</name>
+        <value>async</value>
+        <description>producer type</description>
+    </property>
+    <property>
+        <name>compression.codec</name>
+        <value>0</value>
+        <description>compression codec</description>
+    </property>
+    <property>
+        <name>serializer.class</name>
+        <value>kafka.serializer.DefaultEncoder</value>
+        <description>serializer class</description>
+    </property>
+    <property>
+        <name>max.message.size</name>
+        <value>10000000</value>
+        <description>max message size</description>
+    </property>
+    <property>
+        <name>queue.time</name>
+        <value>1000</value>
+        <description>queue time</description>
+    </property>
+    <property>
+        <name>queue.enqueueTimeout.ms</name>
+        <value>-1</value>
+        <description>enqueue timeout</description>
+    </property>
+</configuration>

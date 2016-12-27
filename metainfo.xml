@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <name>KAFKAMM</name>
+            <displayName>Kafka MirrorMaker</displayName>
+            <comment>Manage Kafka replication</comment>
+            <version>0.10.0.2.5</version>
+            <components>
+                <component>
+                    <name>MIRROR_MAKER</name>
+                    <displayName>Mirror Maker daemon</displayName>
+                    <category>MASTER</category>
+                    <cardinality>1+</cardinality>
+                    <dependencies>
+                        <dependency>
+                            <name>KAFKA</name>
+                            <scope>host</scope><!-- need kafka packages -->
+                            <auto-deploy>
+                                <enabled>true</enabled>
+                            </auto-deploy>
+                        </dependency>
+                    </dependencies>
+                    <commandScript>
+                        <script>package/scripts/mirror_maker.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>600</timeout>
+                    </commandScript>
+                </component>
+            </components>
+            <osSpecifics>
+                <osSpecific>
+                    <osFamily>any</osFamily>  <!-- note: use osType rather than osFamily for Ambari 1.5.0 and 1.5.1 -->
+                </osSpecific>
+            </osSpecifics>
+        </service>
+    </services>
+</metainfo>

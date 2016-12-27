@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Kafka mirror maker consumer configurations -->
+
+<configuration supports_final="true">
+    <property>
+        <name>bootstrap.servers</name>
+        <value>{{kafka/zookeeper.connect}}</value>
+        <description>Kafka bootstrap servers to discover all source cluster brokers</description>
+    </property>
+    <property>
+        <name>consumer.timeout.ms</name>
+        <value>-1</value>
+        <description>consumer connection timeout</description>
+    </property>
+    <property>
+        <name>consumer.groupid</name>
+        <value></value>
+        <description>KafkaMirror</description>
+    </property>
+    <property>
+        <name>shallow.iterator.enable</name>
+        <value>true</value>
+        <description>shallow iterator enable</description>
+    </property>
+    <property>
+        <name>mirror.topics.whitelist</name>
+        <value>ulul_topic</value>
+        <description></description>
+    </property>
+    <property>
+        <name>polling.interval</name>
+        <value>300</value>
+        <description>interval, in seconds, of periodic consumer polling</description>
+    </property>
+</configuration>
